@@ -1,0 +1,10 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<br><br><br>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Registrar nuevo usuario</button>
+    </form>
+{% endblock content %}
