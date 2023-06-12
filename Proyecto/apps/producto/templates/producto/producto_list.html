@@ -1,0 +1,29 @@
+{% extends 'producto/index.html' %}
+
+<br>
+{% block title %} Lista de productos {% endblock title %}
+
+{% block content_producto %}
+
+
+    {% if object_list %}
+
+        {% for producto in object_list %}
+            <ul>
+               
+                <li>{{ producto.modelo }} {{ producto.stock }} {{ producto.precio }} {{ producto.descripcion }} {{ producto.fecha_actualizacion }}
+                    
+                    <a href="{% url 'producto:producto_detail' producto.id %}" class="btn btn-secondary">Ver detalle del producto</a>
+                    <a href="{% url 'producto:producto_update' producto.id %}" class="btn btn-primary">Actualizar producto</a>
+                    <a href="{% url 'producto:producto_delete' producto.id %}" class="btn btn-danger">Eliminar producto</a>
+                </li>
+               
+            </ul>
+        {% endfor %}
+    {% else %}
+        <p class="fs-4 fst-italic">No hay registros ingresados</p>
+    {% endif %}
+
+    {% include 'producto/index_back.html' %}
+
+{% endblock content_producto %}
