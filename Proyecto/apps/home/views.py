@@ -33,5 +33,9 @@ def register(request):
     else:
         form = forms.CustomUserCreationForm()
     return render(request, 'home/register.html', {'form':form})
-       
+
+def aboutme(request):
+    return render(request, 'home/aboutme.html')
+    
+          
            
