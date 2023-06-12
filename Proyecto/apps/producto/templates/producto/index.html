@@ -1,13 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Bienvenidos a la sección de Productos</h1>
-    <a href="{% url 'home:index' %}">Volver al inicio</a>
-</body>
-</html>
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+<h1 class="shadow-lg text-center">App Producto</h1>
+<div class="container mt-lg-3">
+    
+{% block content_producto %}
+        
+            <h3 class="pb-lg-3">
+            <br>
+         Categorías de Productos
+        </h3>
+        
+
+        <div class="d-grid gap-3">
+        {% if user.is_staff %}
+            <a href="{% url 'producto:productocategoria_create' %}" class="btn btn-primary">Crear</a>
+        {% endif %}
+            <a href="{% url 'producto:productocategoria_list' %}" class="btn btn-primary">Listar</a> <br>
+        </div>
+
+        <h3 class="pb-lg-3">
+            <br>
+         Productos
+        </h3>
+        
+
+        <div class="d-grid gap-3">
+        {% if user.is_staff %}
+         <a href="{% url 'producto:producto_create' %}" class="btn btn-primary">Crear</a>
+        {% endif %}
+            <a href="{% url 'producto:producto_list' %}" class="btn btn-primary">Listar</a> <br>
+        </div>
+            
+      
+          {% endblock content_producto %}
+    </div>
+{% endblock content %}
