@@ -14,10 +14,9 @@
                     <li class="nav-item"><a class="nav-link text-bg-light">{{ user.username }}</a></li>
                     <li class="nav-item"><a class="nav-link {% if request.path == '/producto/'%} active {% endif %}" href="{% url 'producto:index' %}">Productos</a></li>
                     <li class="nav-item"><a class="nav-link {% if request.path == '/logout/'%} active {% endif %}" href="{% url 'home:logout' %}">Cerrar sesión</a></li>
-
+                    
                     {% else %}
-                    <li class="nav-item"><a class="nav-link me-lg-3" href="features">Features</a></li>
-                    <li class="nav-item"><a class="nav-link me-lg-3" href="{% url 'home:aboutme' %}">Sobre mi</a></li>
+                    <li class="nav-item"><a class="nav-link {% if request.path == '/aboutme/'%} active {% endif %}" href="{% url 'home:aboutme' %}">Sobre mi</a></li>
                     <li class="nav-item"><a class="nav-link {% if request.path == '/login/' %} active {% endif %}" href="{% url 'home:login' %}">Iniciar sesión</a></li>
                     {% endif %}
                     
