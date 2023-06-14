@@ -9,5 +9,8 @@
     {{ form.as_p }}
     <button type="submit">Iniciar sesión</button>
 </form>
-
+<br>
+<h6 class="font-alt">¿No tienes una cuenta? ¡Registrate!</h6>
+<a href="{% url 'home:register' %}" class="btn bg-gradient-primary-to-secondary"><strong>Registrarse</strong></a>
+<br>
 {% endblock content %}
