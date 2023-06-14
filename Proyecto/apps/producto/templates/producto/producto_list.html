@@ -11,7 +11,8 @@
         {% for producto in object_list %}
             <ul>
                
-                <li>{{ producto.modelo }} {{ producto.stock }} {{ producto.precio }} {{ producto.descripcion }} {{ producto.fecha_actualizacion }}
+                <br>
+                <li><p>{{ producto.modelo }} | ${{ producto.precio }} | {{ producto.fecha_de_publicacion}}</p>
                     
                     <a href="{% url 'producto:producto_detail' producto.id %}" class="btn btn-secondary">Ver detalle del producto</a>
                     <a href="{% url 'producto:producto_update' producto.id %}" class="btn btn-primary">Actualizar producto</a>
@@ -21,6 +22,7 @@
             </ul>
         {% endfor %}
     {% else %}
+    <br>
         <p class="fs-4 fst-italic">No hay registros ingresados</p>
     {% endif %}
 

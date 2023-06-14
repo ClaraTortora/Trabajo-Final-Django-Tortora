@@ -1,18 +1,26 @@
 {% extends 'producto/index.html' %}
+{% load static %}
 
 
 {% block title %} Detalle de productos {% endblock title %}
 
 {% block content_producto %}
-
+<br>
     <ul>
         <li>
-            <p><strong>Nombre:</strong> {{ object.nombre_producto }}</p>
-            <p><strong>Detalle:</strong> {{ object.descripcion_producto }}</p>
+            <p><strong>Detalle:</strong> {{ object.descripcion }}</p>
             <p><strong>Modelo:</strong> {{ object.modelo }}</p>
             <p><strong>Precio:</strong> {{ object.precio }}</p>
             <p><strong>Stock:</strong> {{ object.stock }}</p>
-            <p><strong>fecha_actualizacion:</strong> {{ object.fecha_actualizacion }}</p>
+            <p><strong>Fecha de publicación:</strong> {{ object.fecha_de_publicacion }}</p>
+            <img
+            {% if object.imagen_producto %}
+            <p><strong>Imagen del producto:</strong> <img src="{{ object.imagen_producto.url }}" width="200" height="200"></p>
+
+            {% else %}
+            <img src="{% static 'home/img/celular-not-found.jpg' %}" alt="celular404" style="height: 200px;"/> 
+            {% endif %}
+           
         </li>
     </ul>
 

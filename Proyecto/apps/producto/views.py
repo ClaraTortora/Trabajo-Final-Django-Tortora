@@ -4,8 +4,6 @@ from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
 
 from . import forms, models
 
@@ -80,14 +78,13 @@ class ProductoCategoriaUpdate(UpdateView):
     form_class = forms.ProductoCategoriaForm
 
 class ProductoCategoriaDetail(DetailView):
-    model = models.Producto
+    model = models.ProductoCategoria
     
     
 #DETAIL VIEW
-def producto_categoria_detail(request: HttpRequest, pk) -> HttpResponse:
-    categoria = models.ProductoCategoria.objects.get(id=pk)
-    return render(request, "producto/productocategoria_detail.html", {"object": categoria})
-
+#def producto_categoria_detail(request: HttpRequest, pk) -> HttpResponse:
+    #categoria = models.ProductoCategoria.objects.get(id=pk)
+    #return render(request, "producto/productocategoria_detail.html", {"object": categoria})
 
 
     
