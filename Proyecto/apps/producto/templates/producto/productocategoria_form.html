@@ -4,6 +4,7 @@
 {% block title %} Categorías de Productos {% endblock title %}
 
 {% block content_producto %}
+<br>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
