@@ -11,11 +11,16 @@ class ProductoForm(forms.ModelForm):
     class Meta:
         model = models.Producto
         fields = '__all__'
-     #   widgets = {
-      #      'categoria': ...
-       #     'nombre': ...
-        #    'precio': ...
-         #   'cantidad': ...
+        
+        widgets = {
+            'nombre_producto': forms.TextInput(attrs={'class': 'form-control'}),
+            'modelo': forms.TextInput(attrs={'class': 'form-control'}),
+            'descripcion': forms.TextInput(attrs={'class': 'form-control'}),
+            'precio': forms.TextInput(attrs={'class': 'form-control'}),
+            'stock': forms.TextInput(attrs={'class': 'form-control'}),
+            'imagen_producto': forms.FileInput(attrs={'class': 'form-control'}),
+            'fecha_de_publicacion': forms.DateInput(attrs={'class': 'form-control'}),
             
-            
-       # }
+        }
+
+       
