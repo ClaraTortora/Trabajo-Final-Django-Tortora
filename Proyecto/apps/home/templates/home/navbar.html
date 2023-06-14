@@ -16,17 +16,11 @@
                     <li class="nav-item"><a class="nav-link {% if request.path == '/logout/'%} active {% endif %}" href="{% url 'home:logout' %}">Cerrar sesión</a></li>
                     
                     {% else %}
-                    <li class="nav-item"><a class="nav-link {% if request.path == '/aboutme/'%} active {% endif %}" href="{% url 'home:aboutme' %}">Sobre mi</a></li>
                     <li class="nav-item"><a class="nav-link {% if request.path == '/login/' %} active {% endif %}" href="{% url 'home:login' %}">Iniciar sesión</a></li>
+                        <li class="nav-item"><a class="nav-link {% if request.path == '/aboutme/'%} active {% endif %}" href="#bg-light">Sobre mi</a></li>
                     {% endif %}
                     
                 </ul>
-                <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
-                    <span class="d-flex align-items-center">
-                        <i class="bi-chat-text-fill me-2"></i>
-                        <span class="small">Dejanos tu comentario</span>
-                    </span>
-                </button>
             </div>
         </div>
     </nav>
