@@ -10,3 +10,8 @@ class ProductoCategoriaAdmin(admin.ModelAdmin):
     search_fields = ("nombre_producto",)
     list_filter = ("nombre_producto",)
     ordering = ("nombre_producto",)
+    
+    
+admin.site.register(models.Producto)
+    
+    
