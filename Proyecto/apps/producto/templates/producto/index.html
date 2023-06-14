@@ -15,9 +15,9 @@
 
         <div class="d-grid gap-3">
         {% if user.is_staff %}
-            <a href="{% url 'producto:productocategoria_create' %}" class="btn btn-primary">Crear</a>
+            <a href="{% url 'producto:productocategoria_create' %}" class="btn btn-primary">Crear categoría</a>
         {% endif %}
-            <a href="{% url 'producto:productocategoria_list' %}" class="btn btn-primary">Listar</a> <br>
+            <a href="{% url 'producto:productocategoria_list' %}" class="btn btn-primary">Ver listado de categorías</a> <br>
         </div>
 
         <h3 class="pb-lg-3">
@@ -28,9 +28,9 @@
 
         <div class="d-grid gap-3">
         {% if user.is_staff %}
-         <a href="{% url 'producto:producto_create' %}" class="btn btn-primary">Crear</a>
+         <a href="{% url 'producto:producto_create' %}" class="btn btn-primary">Crear productos</a>
         {% endif %}
-            <a href="{% url 'producto:producto_list' %}" class="btn btn-primary">Listar</a> <br>
+            <a href="{% url 'producto:producto_list' %}" class="btn btn-primary">Listar productos</a> <br>
         </div>
             
       
