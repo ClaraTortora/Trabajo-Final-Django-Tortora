@@ -11,8 +11,11 @@ class ProductoCategoriaAdmin(admin.ModelAdmin):
     list_filter = ("nombre_producto",)
     ordering = ("nombre_producto",)
     
-#Registrando las apps con modelos
+#Registrando la app Producto
 admin.site.register(models.Producto)
+
+#Registrando la app Oferta
+admin.site.register(models.Oferta)
 
     
     
