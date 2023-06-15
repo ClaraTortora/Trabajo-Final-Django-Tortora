@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
+#Clase para crear el formulario
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = User
@@ -12,7 +13,8 @@ class CustomUserCreationForm(UserCreationForm):
             'password1': forms.PasswordInput(attrs={'class': 'form-control'}),
             'password2': forms.PasswordInput(attrs={'class': 'form-control'}),
         }
-        
+
+#Clase para autentificar el formulario    
 class CustomAuthenticationForm(AuthenticationForm):
     class Meta:
         model = User
