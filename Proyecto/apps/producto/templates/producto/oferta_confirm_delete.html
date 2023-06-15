@@ -1,0 +1,17 @@
+{% extends 'producto/ofertas.html' %}
+
+
+{% block title %} Eliminación de ofertas {% endblock title %}
+
+{% block content_producto %}
+<br>
+    <p class="fs-5 fst-italic ">¿Confirmas eliminar "{{ object }}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+    </form>
+
+    {% include 'producto/ofertas_back.html' %}
+
+{% endblock content_producto %}
