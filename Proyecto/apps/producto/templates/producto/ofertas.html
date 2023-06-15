@@ -1,0 +1,27 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+<h1 class="shadow-lg text-center">App Producto</h1>
+<div class="container mt-lg-3">
+    
+{% block content_producto %}
+        
+            <h3 class="pb-lg-3">
+            <br>
+         Categoría de ofertas
+        </h3>
+        
+
+        <div class="d-grid gap-3">
+        {% if user.is_staff %}
+            <a href="{% url 'producto:oferta_create' %}" class="btn btn-primary">Crear oferta</a>
+        {% endif %}
+            <a href="{% url 'producto:oferta_list' %}" class="btn btn-primary">Ver listado de ofertas</a> <br>
+        </div>
+
+
+      
+          {% endblock content_producto %}
+    </div>
+{% endblock content %}
