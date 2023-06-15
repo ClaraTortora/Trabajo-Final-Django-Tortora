@@ -2,9 +2,18 @@
 
 {% block content %}
 <br><br><br>
+<div style="display: flex; justify-content: center; gap: 2rem;"> 
+<div class="shadow p-5 mb-5 bg-body rounded">
+    
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Registrar nuevo usuario</button>
+
+        <div class="d-grid gap-3">
+        <button type="submit" class="btn bg-gradient-primary-to-secondary btn-outline-dark">Registrar nuevo usuario</button>
+    </div>
     </form>
-{% endblock content %}
+</div>
+</div>
+    
+{% endblock content %}  

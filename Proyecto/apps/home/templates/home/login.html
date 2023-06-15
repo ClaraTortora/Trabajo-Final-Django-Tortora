@@ -4,13 +4,28 @@
 
 <br>
 <br><br><br>
-<form method="POST">
+<div style="display: flex; justify-content: center; gap: 2rem;"> 
+    <div class="shadow p-5 mb-5 bg-body rounded">
+<form method="POST" type="text" placeholder="Default input">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Iniciar sesión</button>
+    <div class="d-grid gap-3">
+    <button type="submit" class="btn btn-outline-dark">Iniciar sesión</button>
+</div>
+</div>
 </form>
-<br>
+
+
+
+
+</div>
+<div style="display: flex; justify-content: center; gap: 2rem;">  
+    <div class="d-grid gap-3">
 <h6 class="font-alt">¿No tienes una cuenta? ¡Registrate!</h6>
-<a href="{% url 'home:register' %}" class="btn bg-gradient-primary-to-secondary"><strong>Registrarse</strong></a>
-<br>
+
+
+<a href="{% url 'home:register' %}" class="btn btn-outline-dark bg-gradient-primary-to-secondary"><strong>Registrarse</strong></a>
+
+</div>
+</div>
 {% endblock content %}

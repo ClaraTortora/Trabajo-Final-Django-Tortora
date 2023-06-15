@@ -1,12 +1,16 @@
 from django import forms
 from . import models
 
+#Formularios
+
+#Formulario de Producto Categoría
 class ProductoCategoriaForm(forms.ModelForm):
     class Meta:
         model = models.ProductoCategoria
         fields = '__all__'
         
 
+#Formulario de Producto
 class ProductoForm(forms.ModelForm):
     class Meta:
         model = models.Producto
@@ -23,6 +27,7 @@ class ProductoForm(forms.ModelForm):
             
         }
 
+#Formulario de Ofertas
 class OfertaForms(forms.ModelForm):
     class Meta:
         model = models.Oferta

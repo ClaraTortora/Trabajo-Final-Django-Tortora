@@ -11,7 +11,7 @@ from . import forms
 def index(request):
     return render (request, 'home/index.html')
 
-# LOGIN
+#LOGIN
 def login_request(request):
     if request.method == "POST":
         form = AuthenticationForm(request.POST, data=request.POST)
@@ -26,7 +26,8 @@ def login_request(request):
         form = AuthenticationForm()
     return render(request, 'home/login.html', {'form': form})
 
-# REGISTRO
+
+#REGISTRO
 def register(request):
     if request.method == "POST":
         form = forms.CustomUserCreationForm(request.POST)
@@ -37,7 +38,8 @@ def register(request):
         form = forms.CustomUserCreationForm()
     return render(request, 'home/register.html', {'form': form})
 
-# SOBRE MI 
+
+#SOBRE MI 
 def aboutme(request):
     return render(request, 'home/aboutme.html')
     

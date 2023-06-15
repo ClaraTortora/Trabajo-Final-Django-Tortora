@@ -4,7 +4,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from . import views
 
 
-#URLS basadas en clases
+#URLS basadas en clases - todas de la app Producto y sus CRUDS
 
 urlpatterns = [
     path("", views.index, name="index"),

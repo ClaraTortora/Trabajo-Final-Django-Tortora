@@ -9,30 +9,38 @@ from . import forms, models
 
 
 # Create your views here.
+#-----Modelo Producto - CRUD
 def index(request):
     return render (request, 'producto/index.html')
 
 template_name = "producto/index.html"
 
 
+#CREATE VIEW
 class ProductoCreate(CreateView):
     model = models.Producto
     form_class = forms.ProductoForm
     success_url = reverse_lazy("producto:index")
-    
+
+
+#LIST VIEW
 class ProductoList(ListView):
     model = models.Producto
 
 
+#DETAIL VIEW
 class ProductoDetail(DetailView):
     model = models.Producto
 
 
+#UPDATE VIEW
 class ProductoUpdate(UpdateView):
     model = models.Producto
     success_url = reverse_lazy("producto:producto_list")
     form_class = forms.ProductoForm
-    
+
+
+#DELETE VIEW
 class ProductoDelete(DeleteView):
     model = models.Producto
     success_url = reverse_lazy("producto:producto_list")
@@ -40,9 +48,7 @@ class ProductoDelete(DeleteView):
 
 
 
-
-
-
+#-----Modelo Producto Categoría - CRUD
 
 
 #LISTAR VIEW
@@ -77,37 +83,45 @@ class ProductoCategoriaUpdate(UpdateView):
     success_url = reverse_lazy("producto:productocategoria_list")
     form_class = forms.ProductoCategoriaForm
 
+#DETAIL VIEW
 class ProductoCategoriaDetail(DetailView):
     model = models.ProductoCategoria
     
     
-#DETAIL VIEW
-#def producto_categoria_detail(request: HttpRequest, pk) -> HttpResponse:
-    #categoria = models.ProductoCategoria.objects.get(id=pk)
-    #return render(request, "producto/productocategoria_detail.html", {"object": categoria})
-
-
+    
+    
+#----Modelo Ofertas - CRUD
 
 def ofertas(request):
     return render (request, 'producto/ofertas.html')
 
+
+#CREATE VIEW
 class OfertaCreate(CreateView):
     model = models.Oferta
     form_class = forms.OfertaForms
     success_url = reverse_lazy("producto:oferta_list")
-    
+
+
+#DETAIL VIEW
 class OfertaDetail(DetailView):
     model = models.Oferta
-    
+
+
+#UPDATE VIEW
 class OfertaUpdate(UpdateView):
     model = models.Oferta
     success_url = reverse_lazy("producto:oferta_list")
     form_class = forms.OfertaForms
-    
+
+
+#DELETE VIEW
 class OfertaDelete(DeleteView):
     model = models.Oferta
     success_url = reverse_lazy("producto:oferta_list")
-    
+
+
+#LIST VIEW
 class OfertaList(ListView):
     model = models.Oferta
     

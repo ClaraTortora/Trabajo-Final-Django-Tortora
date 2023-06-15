@@ -19,10 +19,12 @@ from django.urls import path, include
 from django.conf import settings 
 from django.conf.urls.static import static
 
+#URLS generales de las apps
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(('home.urls', 'home'))),
     path('producto/', include(('producto.urls', 'producto'))),
+    
     
 ]
 
