@@ -1,0 +1,26 @@
+{% extends 'producto/ofertas.html' %}
+{% load static %}
+
+
+{% block title %} Detalle de las ofertas {% endblock title %}
+
+{% block content_producto %}
+<br>
+    <ul>
+        <li>
+            <p><strong>Precio con descuento:</strong> {{ object.descuento }}</p>
+            <img
+            {% if object.imagen_oferta %}
+            <p><strong>Imagen del producto:</strong> <img src="{{ object.imagen_oferta.url }}" width="200" height="200"></p>
+
+            {% else %}
+            <img src="{% static 'home/img/celular-not-found.jpg' %}" alt="celular404" style="height: 200px;"/> 
+            {% endif %}
+           
+        </li>
+    </ul>
+
+    {% include 'producto/ofertas_back.html' %}
+
+
+{% endblock content_producto %}

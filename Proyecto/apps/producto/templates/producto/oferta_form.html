@@ -1,0 +1,17 @@
+{% extends 'producto/ofertas.html' %}
+
+
+{% block title %} Oferta de productos {% endblock title %}
+
+{% block content_producto %}
+<br>
+    <form method="post" enctype="multipart/form-data">
+        
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Guardar</button>
+    </form>
+
+    {% include 'producto/ofertas_back.html' %}
+
+{% endblock content_producto %}

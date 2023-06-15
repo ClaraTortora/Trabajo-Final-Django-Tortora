@@ -1,0 +1,31 @@
+{% extends 'producto/ofertas.html' %}
+
+<br>
+{% block title %} Lista de productos con descuento {% endblock title %}
+
+{% block content_producto %}
+
+
+    {% if object_list %}
+
+        {% for oferta in object_list %}
+            <ul>
+               
+                <br> 
+                <li><p>{{ oferta.producto }} | Nuevo precio ${{ oferta.descuento }}</p>
+                    
+                    <a href="{% url 'producto:oferta_detail' oferta.id %}" class="btn btn-secondary">Ver detalle de la oferta</a>
+                    <a href="{% url 'producto:oferta_update' oferta.id %}" class="btn btn-primary">Actualizar oferta</a>
+                    <a href="{% url 'producto:oferta_delete' oferta.id %}" class="btn btn-danger">Eliminar oferta</a>
+                </li>
+               
+            </ul>
+        {% endfor %}
+    {% else %}
+    <br>
+        <p class="fs-4 fst-italic">No hay registros ingresados</p>
+    {% endif %}
+
+    {% include 'producto/ofertas_back.html' %}
+
+{% endblock content_producto %}
