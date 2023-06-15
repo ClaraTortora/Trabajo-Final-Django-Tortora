@@ -13,6 +13,7 @@
                     {% if user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link text-bg-light">{{ user.username }}</a></li>
                     <li class="nav-item"><a class="nav-link {% if request.path == '/producto/'%} active {% endif %}" href="{% url 'producto:index' %}">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link {% if request.path == '/oferta/'%} active {% endif %}" href="{% url 'producto:ofertas' %}">Ofertas</a></li>
                     <li class="nav-item"><a class="nav-link {% if request.path == '/logout/'%} active {% endif %}" href="{% url 'home:logout' %}">Cerrar sesión</a></li>
                     
                     {% else %}
