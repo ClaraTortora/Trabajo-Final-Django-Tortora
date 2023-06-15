@@ -6,19 +6,20 @@
 
 <br><br><br>
     {% if user.is_authenticated %}
-     <h4>¡Bienvenid@ {{ user.username }}!</h4>
-     <br>
+    <p class="lead fw-normal text-muted mb-5">¡Bienvenid@ {{ user.username }}!</p>
+     
      {% if mensaje %}
-     <h2>{{ mensaje }}</h2>
+     <h2 class="lead fw-normal text-muted mb-5">{{ mensaje }}</h2>
      {% endif %}
 
     {% endif %}
 
 {% if user.is_staff %}
 
+
 <br><br>
-    <p><a href="{% url 'admin:index' %}">Administración</a></p>
-    <p><a href="{% url 'home:register' %}">Registrar nuevos trabajadores</a></p>
+    <p><a href="{% url 'admin:index' %}"type="submit"class="btn btn-warning">Administración</a></p>
+    <p><a href="{% url 'home:register' %}"type="submit"class="btn btn-warning">Registrar nuevos trabajadores</a></p>
 
 {% endif %}
 

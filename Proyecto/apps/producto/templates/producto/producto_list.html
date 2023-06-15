@@ -34,14 +34,14 @@
             </div>
           </div>
         {% endfor %}
-    </div>
         
         {% else %}
-    <br>
+        <br>
         <p class="fs-4 fst-italic">No hay registros ingresados</p>
-    {% endif %}
-    <div class="d-grid gap-3">
-    {% include 'producto/index_back.html' %}
-</div>
-
+        {% endif %}
+        <div class="d-grid gap-3">
+            {% include 'producto/index_back.html' %}
+        </div>
+        
+    </div>
 {% endblock content_producto %}

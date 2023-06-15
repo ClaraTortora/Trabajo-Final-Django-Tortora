@@ -4,20 +4,21 @@
 
 {% block title %} Detalle de productos {% endblock title %}
 {% block content_producto %}
-<div class="card" style="width: 22rem; padding: 0rem; margin: 1rem;">
+<div class="shadow p-3 mb-2 bg-body rounded">
+<div class="card" style="width: 25rem; padding: 0rem; margin: 1rem;">
 <br>
      <div class="card-body" style="display: flex; flex-direction: column; justify-content: space-between">
         <div style="padding-bottom: 1rem;">
 
-            <h5 class="card-title">{{ object.modelo }}</h5>
-            <p class="card-text">{{ object.descripcion }}</p>
-            <p class="card-text" style="text-align: end;"><strong>$ {{ object.precio }}</p>
-            <p class="card-text"><span style="text-decoration: underline;">Stock: </span>{{ object.stock }}</p>
-            <p class="card-text"><span style="text-decoration: underline;">Fecha de publicación: </span>{{ object.fecha_de_publicacion }}</p>
+            <h5 class="card-title"style="text-align: center;">{{ object.modelo }}</h5>
+            <p class="card-text"style="text-align: center;">{{ object.descripcion }}</p>
+            <p class="card-text" style="text-align: center;"><strong>$ {{ object.precio }}</p>
+            <p class="card-text"style="text-align: center;""><span style="text-decoration: underline;">Stock: </span>{{ object.stock }}</p>
+            <p class="card-text"style="text-align: center;" ><span style="text-decoration: underline;">Fecha de publicación: </span>{{ object.fecha_de_publicacion }}</p>
         </div>
             <img
-            {% if object.imagen_producto %}
-            <p><strong>Imagen del producto:</strong> <img src="{{ object.imagen_producto.url }}" width="200" height="200"></p>
+            {% if object.imagen_producto %}>
+            <img src="{{ object.imagen_producto.url }}" width="200" height="200" class="card-img-top img-fluid" alt="example">
 
             {% else %}
             <img src="{% static 'home/img/celular-not-found.jpg' %}" alt="celular404" style="height: 200px;"/> 
@@ -25,8 +26,9 @@
 
         
      </div>
-        </li>
+        
     </ul>
+</div>
 </div>
     {% include 'producto/index_back.html' %}
 
