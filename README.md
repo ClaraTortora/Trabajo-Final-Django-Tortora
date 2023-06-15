@@ -1,11 +1,13 @@
 Trabajo Final Django - Clara I. Tortora
 
 Alumna - Clara Inés Tortora
+
 Comisión - 40445
 
-Idea del trabajo
+Video explicando mi página: https://youtu.be/wQcnVEiSKrk
 
-video : https://youtu.be/wQcnVEiSKrk
+
+Idea del trabajo
 
 
 
@@ -37,9 +39,13 @@ Roadmap de la página
 
 
 
+
+
 Apps y CRUD
 
 Tiene 2 apps; Home y Producto. Cuenta con 3 CRUD, ya que en producto está también 'Producto Categoría', y luego la app oferta.
+
+
 
 
 Paquetes instaladas para que funcione todo
