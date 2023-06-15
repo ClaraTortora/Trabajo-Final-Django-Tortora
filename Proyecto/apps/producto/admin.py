@@ -13,5 +13,6 @@ class ProductoCategoriaAdmin(admin.ModelAdmin):
     
     
 admin.site.register(models.Producto)
+admin.site.register(models.Oferta)
     
     

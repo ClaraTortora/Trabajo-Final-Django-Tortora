@@ -23,4 +23,15 @@ class ProductoForm(forms.ModelForm):
             
         }
 
+class OfertaForms(forms.ModelForm):
+    class Meta:
+        model = models.Oferta
+        fields = '__all__'
+        
+        widgets = {
+            'producto': forms.Select(attrs={'class': 'form-control'}),
+            'precio': forms.TextInput(attrs={'class': 'form-control'}),
+            'descuento': forms.TextInput(attrs={'class': 'form-control'}),
+            'fecha_de_publicacion_oferta': forms.DateInput(attrs={'class': 'form-control'}),
+        }
        

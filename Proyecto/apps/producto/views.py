@@ -87,8 +87,29 @@ class ProductoCategoriaDetail(DetailView):
     #return render(request, "producto/productocategoria_detail.html", {"object": categoria})
 
 
+
+def ofertas(request):
+    return render (request, 'producto/ofertas.html')
+
+class OfertaCreate(CreateView):
+    model = models.Oferta
+    form_class = forms.OfertaForms
+    success_url = reverse_lazy("producto:oferta_list")
     
+class OfertaDetail(DetailView):
+    model = models.Oferta
     
+class OfertaUpdate(UpdateView):
+    model = models.Oferta
+    success_url = reverse_lazy("producto:oferta_list")
+    form_class = forms.OfertaForms
+    
+class OfertaDelete(DeleteView):
+    model = models.Oferta
+    success_url = reverse_lazy("producto:oferta_list")
+    
+class OfertaList(ListView):
+    model = models.Oferta
     
 
 

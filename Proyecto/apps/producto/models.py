@@ -31,15 +31,17 @@ class Producto(models.Model):
         verbose_name_plural = "productos"
 
     def __str__(self):
-        return f"{self.modelo} - ${self.precio:.2f} {self.imagen_producto}"
+        return f"{self.modelo} - ${self.precio:.2f}"
     
     
-class Ofertas(models.Model):
+class Oferta(models.Model):
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE, verbose_name='Producto')
-    precio = models.DecimalField(max_digits=15, decimal_places=2)
+    descuento = models.DecimalField(max_digits=15, decimal_places=2, verbose_name='Nuevo precio con descuento')
     fecha_de_publicacion_oferta = models.DateTimeField(default=timezone.now, editable=False, verbose_name='Fecha de publicación de la oferta')
-    descripcion = models.CharField(max_length=200, null=True, blank=True, verbose_name='Descripción')
-    imagen_oferta = models.ImageField(null=True, blank=True, upload_to="celulares")
+    imagen_oferta = models.ImageField(null=True, blank=True, upload_to="ofertas")
+    
+    def descuento_oferta(self):
+        pass
     
     def __str__(self):
-        return f"{self.producto} - ${self.precio:.2f} {self.imagen_oferta}"
+        return f"{self.producto} - ${self.descuento:.2f} {self.imagen_oferta}"
