@@ -2,9 +2,10 @@
 
 {% block content %}
 
-<h1 class="shadow-lg text-center">App Producto</h1>
-<div class="container mt-lg-3">
-    
+<div style="display: flex; flex-direction: column; align-items: center; padding: 1rem; padding-bottom: 4rem;">
+   
+    <h1 style="padding: 1rem;">Productos</h1>
+
 {% block content_producto %}
         
             <h3 class="pb-lg-3">
@@ -12,28 +13,32 @@
          Categorías de Productos
         </h3>
         
-
+        <div style="display: flex; justify-content: center; gap: 2rem;">    
         <div class="d-grid gap-3">
         {% if user.is_staff %}
             <a href="{% url 'producto:productocategoria_create' %}" class="btn btn-primary">Crear categoría</a>
         {% endif %}
             <a href="{% url 'producto:productocategoria_list' %}" class="btn btn-primary">Ver listado de categorías</a> <br>
         </div>
+    </div>
 
-        <h3 class="pb-lg-3">
-            <br>
-         Productos
-        </h3>
-        
+
+    <h3 class="pb-lg-3">
+        <br>
+        Productos
+    </h3>
+    
+    <div style="display: flex; justify-content: center; gap: 2rem;">  
 
         <div class="d-grid gap-3">
         {% if user.is_staff %}
-         <a href="{% url 'producto:producto_create' %}" class="btn btn-primary">Crear productos</a>
+         <a href="{% url 'producto:producto_create' %}" class="btn btn-secondary">Crear productos</a>
         {% endif %}
-            <a href="{% url 'producto:producto_list' %}" class="btn btn-primary">Listar productos</a> <br>
+            <a href="{% url 'producto:producto_list' %}" class="btn btn-secondary">Listar productos</a> <br>
         </div>
             
-      
-          {% endblock content_producto %}
     </div>
+          {% endblock content_producto %}
+   
+        </div>
 {% endblock content %}

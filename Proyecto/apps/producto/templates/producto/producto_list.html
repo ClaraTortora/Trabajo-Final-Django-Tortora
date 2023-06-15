@@ -1,31 +1,47 @@
 {% extends 'producto/index.html' %}
-
+{% load static %}
 <br>
 {% block title %} Lista de productos {% endblock title %}
 
 {% block content_producto %}
 
+<div class="row gx-4 gx-lg-5" style="display: flex;flex-direction: row; flex-wrap: wrap; justify-content: space-around;">
 
     {% if object_list %}
 
         {% for producto in object_list %}
-            <ul>
-               
-                <br>
-                <li><p>{{ producto.modelo }} | ${{ producto.precio }} | {{ producto.fecha_de_publicacion}}</p>
-                    
-                    <a href="{% url 'producto:producto_detail' producto.id %}" class="btn btn-secondary">Ver detalle del producto</a>
-                    <a href="{% url 'producto:producto_update' producto.id %}" class="btn btn-primary">Actualizar producto</a>
-                    <a href="{% url 'producto:producto_delete' producto.id %}" class="btn btn-danger">Eliminar producto</a>
-                </li>
-               
-            </ul>
+        <div class="card" style="width: 22rem; padding: 0rem; margin: 1rem;">
+            <img
+            {% if producto.imagen_producto%}
+                    src="{{producto.imagen_producto.url}}"
+                    {% else %}
+                     src="{% static 'home/img/celular-not-found.jpg' %}" alt="celular404" style="height: 200px;" 
+                    {% endif %}
+            class="card-img-top img-fluid" alt="example">
+            <div class="card-body" style="display: flex; flex-direction: column; justify-content: space-between">
+                <div style="padding-bottom: 1rem;">
+                    <h5 class="card-title">{{producto.modelo}}</h5>
+                    <p class="card-text">{{producto.descripcion}}</p>
+                    <p class="card-text" style="text-align: end;"><strong>$ {{producto.precio}}</strong></p>
+                </div>
+              <div style="text-align: center;">
+                  <a href="{% url 'producto:producto_detail' producto.id %}" class="btn btn-secondary">Ver detalle</a>
+                  {% if user.is_staff %}
+                  <a href="{% url 'producto:producto_update' producto.id %}" class="btn btn-primary">Actualizar</a>
+                  <a href="{% url 'producto:producto_delete' producto.id %}" class="btn btn-danger">Eliminar</a>
+                  {% endif %}
+              </div>
+            </div>
+          </div>
         {% endfor %}
-    {% else %}
+    </div>
+        
+        {% else %}
     <br>
         <p class="fs-4 fst-italic">No hay registros ingresados</p>
     {% endif %}
-
+    <div class="d-grid gap-3">
     {% include 'producto/index_back.html' %}
+</div>
 
 {% endblock content_producto %}
