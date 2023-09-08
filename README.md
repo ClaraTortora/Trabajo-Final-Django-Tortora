@@ -17,7 +17,8 @@ Hay un apartado llamado 'sobre mi' que cuenta brevemente quien soy y que me gust
 </div>
 Dato importante: cualquier persona puede loguearse, no solamente el admin puede hacer el registro. Mi idea era que, si registrabas personas siendo admin, estabas registrando vendedores, y registrandote desde la parte de login, fueran clientes.
 
-Roadmap de la página 
+
+| Roadmap de la página |
 
 /inicio - con 3 secciones con detalles, la última es un 'sobre mi'. Al principio este 'sober mi' tenía url y accedías a otra página. Luego decidí hacerlo onepage porque me gustaba como quedaba.
 
